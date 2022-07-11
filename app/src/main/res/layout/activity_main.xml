@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="top"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/title_background"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/corners_camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/surfaceview" />
+
+    <TextView
+        android:id="@+id/binary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="selectBinaryImage"
+        android:text="binary"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/title_background"
+        app:layout_constraintTop_toTopOf="@+id/surfaceview" />
+
+    <TextView
+        android:id="@+id/canny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:onClick="selectCannyImage"
+        android:text="canny"
+        android:textAllCaps="true"
+        android:textColor="#FFEB3B"
+        app:layout_constraintEnd_toStartOf="@+id/binary"
+        app:layout_constraintTop_toTopOf="@+id/binary" />
+
+    <TextView
+        android:id="@+id/origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:onClick="selectOriginImage"
+        android:text="origin"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/canny"
+        app:layout_constraintTop_toTopOf="@+id/binary" />
+
+    <TextView
+        android:id="@+id/AccelerometerX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="水平儀"
+        android:textColor="#ffffff"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_background"
+        app:layout_constraintEnd_toStartOf="@+id/horizontal_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/AccelerometerY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="水平儀"
+        android:textColor="#ffffff"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/horizontal_guideline"
+         />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="@drawable/line_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_background"
+        app:layout_constraintEnd_toStartOf="@+id/horizontal_guideline"
+        app:layout_constraintStart_toStartOf="@+id/horizontal_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/title_background" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@drawable/line_stroke"
+        app:layout_constraintBottom_toBottomOf="@+id/vertical_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/vertical_guideline" />
+
+<!--    <View-->
+<!--        android:id="@+id/view4"-->
+<!--        android:layout_width="2dp"-->
+<!--        android:layout_height="2dp"-->
+<!--        android:layout_marginEnd="250px"-->
+<!--        android:background="@drawable/point"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/view2"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/view3"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/view2"-->
+<!--        />-->
+
+<!--    <View-->
+<!--        android:layout_width="2dp"-->
+<!--        android:layout_height="2dp"-->
+<!--        android:background="@drawable/point"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/view2"-->
+<!--        android:layout_marginStart="250px"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/view3"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/view2" />-->
+
+    <View
+        android:id="@+id/bottom_background"
+        android:layout_width="0dp"
+        android:layout_height="123dp"
+        android:background="@drawable/corners_camera"
+        app:layout_constraintBottom_toBottomOf="@+id/surfaceview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_capture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:onClick="onClickCapture"
+        app:srcCompat="@drawable/button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bottom_background"
+        app:layout_constraintStart_toStartOf="@+id/bottom_background"
+        app:layout_constraintTop_toTopOf="@+id/bottom_background"
+        />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="20dp"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bottom_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottom_background"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/horizontal_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/vertical_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/FrameLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <FrameLayout
+        android:id="@+id/origin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="367dp"
+        android:layout_height="79dp"
+        android:layout_gravity="center|top"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="#80FAF7F7"
+        android:max="100"
+        android:progress="50"
+        android:visibility="invisible" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="367dp"
+        android:layout_height="79dp"
+        android:layout_gravity="center|top"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="#80FFFFFF"
+        android:max="200"
+        android:progress="125"
+        android:visibility="invisible" />
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:foregroundGravity="bottom|right"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        fab:menu_colorNormal="#2377B9"
+        fab:menu_colorPressed="#5F87A7">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_folder_24"
+            android:onClick="historyOnClick"
+            fab:fab_colorNormal="#BAE7FC"
+            fab:fab_colorPressed="#ECF6FD"
+            fab:fab_label="儲存"
+            fab:fab_size="normal" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/img_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_loop_24"
+            android:onClick="changeTypeOnClick"
+            fab:fab_colorNormal="#BAE7FC"
+            fab:fab_colorPressed="#ECF6FD"
+            fab:fab_label="切換修圖方式"
+            fab:fab_size="normal" />
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/img_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_filter_24"
+            android:onClick="showAfterOnClick"
+            fab:fab_colorNormal="#BAE7FC"
+            fab:fab_colorPressed="#ECF6FD"
+            fab:fab_label="原圖/修圖 轉換"
+            fab:fab_size="normal" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/Adjustment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_construction_24"
+            android:visibility="invisible"
+            android:onClick="adjustmentOnClick"
+            fab:fab_colorNormal="#BAE7FC"
+            fab:fab_colorPressed="#ECF6FD"
+            fab:fab_label="修圖參數調整"
+            fab:fab_size="normal" />
+    </com.github.clans.fab.FloatingActionMenu>
+
+</FrameLayout>
