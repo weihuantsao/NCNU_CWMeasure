@@ -2,14 +2,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.ar.sceneform.plugin'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.google.ar.core.examples.java.helloar"
 
         // AR Optional apps must declare minSdkVersion >= 14.
         // AR Required apps must declare minSdkVersion >= 24.
         minSdkVersion 24
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
     }
@@ -27,7 +27,7 @@ android {
 
 dependencies {
     // ARCore library
-    implementation 'com.google.ar:core:1.10.0'
+    implementation 'com.google.ar:core:1.25.0'
     implementation 'com.github.clans:fab:1.6.4'
 
     // Obj - a simple Wavefront OBJ file loader
@@ -54,7 +54,7 @@ dependencies {
 }
 
 
-sceneform.asset('sampledata/modles/model.obj',
-        'default',
-        'sampledata/modles/model.sfa',
-        'src/main/assets/model')
+//sceneform.asset('sampledata/modles/model.obj',
+//        'default',
+//        'sampledata/modles/model.sfa',
+//        'src/main/assets/model')

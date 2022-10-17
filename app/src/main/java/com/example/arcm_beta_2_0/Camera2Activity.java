@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -41,6 +42,7 @@ public class Camera2Activity extends AppCompatActivity {
 
     private Bundle bundle = new Bundle();
     private boolean hasPic = false;
+    private DisplayMetrics metrics;
 
     Uri myUri;
 
@@ -66,6 +68,10 @@ public class Camera2Activity extends AppCompatActivity {
             capturePictureThread = new CapturePictureThread();
             capturePictureThread.start();
         }
+
+        metrics = this.getResources().getDisplayMetrics();
+        float ratio = ((float)metrics.heightPixels / (float)metrics.widthPixels);
+
     }
 
     private void goCWMeasureActivity() {
@@ -113,7 +119,9 @@ public class Camera2Activity extends AppCompatActivity {
         CropImage.activity(myUri)
                 .setGuidelines(CropImageView.Guidelines.ON)
                 .setActivityTitle("Crop Image")
-                //.setFixAspectRatio(true)
+                .setFixAspectRatio(true)
+                .setAspectRatio(metrics.widthPixels,metrics.heightPixels)
+                .setMinCropResultSize(metrics.widthPixels,metrics.heightPixels)
                 .setCropMenuCropButtonTitle("Done")
                 .start(this);
     }
